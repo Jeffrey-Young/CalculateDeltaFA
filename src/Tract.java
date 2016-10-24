@@ -33,7 +33,8 @@ public class Tract {
       System.out.println(sum / size + _name);
     }
     if (size == 0) {
-      _averageFAs.add(0.0);
+      _averageFAs.add(Double.MIN_VALUE); // sentinel value to mark a nan, handle
+                                         // in runner when writing
 
     } else {
       _averageFAs.add(sum / size);

@@ -71,7 +71,11 @@ public class Runner {
               // System.out.println(studies.get(j).getTracts().get(tractIndex).getAtlasFA(k)
               // + " - " +
               // studies.get(i).getTracts().get(tractIndex).getAtlasFA(k));
-              outputCSV.write(Double.toString(studies.get(j).getTracts().get(tractIndex).getAtlasFA(k) - studies.get(i).getTracts().get(tractIndex).getAtlasFA(k)) + "\n");
+              if (studies.get(j).getTracts().get(tractIndex).getAtlasFA(k) == Double.MIN_VALUE || studies.get(i).getTracts().get(tractIndex).getAtlasFA(k) == Double.MIN_VALUE) {
+                outputCSV.write("0\n"); // write out 0 where we have a nan
+              } else {
+                outputCSV.write(Double.toString(studies.get(j).getTracts().get(tractIndex).getAtlasFA(k) - studies.get(i).getTracts().get(tractIndex).getAtlasFA(k)) + "\n");
+              }
             }
 
           } catch (Exception e) {
