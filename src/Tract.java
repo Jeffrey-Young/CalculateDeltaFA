@@ -23,7 +23,7 @@ public class Tract {
     // want to skip last column (atlas FA)
     String FAArray[] = line.split(",");
     for (int i = 1; i < FAArray.length - 1; i++) {
-      if (FAArray[i].toLowerCase().contains("nan")) {
+      if (FAArray[i].toLowerCase().equals("-nan")) {
         continue;
       }
       sum += Double.parseDouble(FAArray[i]);
@@ -32,7 +32,13 @@ public class Tract {
     if (sum / size > 1) {
       System.out.println(sum / size + _name);
     }
-    _averageFAs.add(sum / size);
+    if (sum / size == 0){
+      _averageFAs.add(0.0);
+
+    }
+    else {
+      _averageFAs.add(sum / size);
+    }
   }
 
   public String getName() {
