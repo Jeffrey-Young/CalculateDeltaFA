@@ -32,11 +32,10 @@ public class Tract {
     if (sum / size > 1) {
       System.out.println(sum / size + _name);
     }
-    if (sum / size == 0){
+    if (size == 0) {
       _averageFAs.add(0.0);
 
-    }
-    else {
+    } else {
       _averageFAs.add(sum / size);
     }
   }

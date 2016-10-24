@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Runner {
 
-  public static final String PROPERTY = "RD";
+  public static final String PROPERTY = "FA";
 
   public static void main(String[] args) {
 
